@@ -22,37 +22,38 @@ import {action as destroyAction} from './routes/Destroy'
 import Index from './routes/index.jsx'
 
 
-const routers = createBrowserRouter([
-  {
-    path:  '/',
-    element:  <Root/>,
-    errorElement: <ErrorPage/>,
-    loader: rootLoader,
-    action: rootAction,
-    children: [
-      {index: true, element: <Index/>},
-      {
-        path: "contacts/:contactId",
-        element: <Contact/>,
-        loader: contactLoader,
-        action: contactAction
+// const router = createBrowserRouter([
+//   {
+//     path:  '/',
+//     element:  <Root/>,
+//     errorElement: <ErrorPage/>,
+//     loader: rootLoader,
+//     action: rootAction,
+//     children: [
+//       {index: true, element: <Index/>},
+//       {
+//         path: "contacts/:contactId",
+//         element: <Contact/>,
+//         loader: contactLoader,
+//         action: contactAction
 
-      },
-      {
-        path: "contacts/:contactId/edit",
-        element: <EditContact/>,
-        loader: contactLoader,
-        action: editContactAction
-      },
-      {
-        path: "contacts/:contactId/destroy",
-        action: destroyAction,
-        errorElement: <div>Opps: There was an error</div>
-      }
-    ]
-  },
+//       },
+//       {
+//         path: "contacts/:contactId/edit",
+//         element: <EditContact/>,
+//         loader: contactLoader,
+//         action: editContactAction
+//       },
+//       {
+//         path: "contacts/:contactId/destroy",
+//         action: destroyAction,
+//         errorElement: <div>Opps: There was an error</div>
+//       }
+//     ]
+//   },
   
-])
+// ])
+// we can also create routes using JSX
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route 
